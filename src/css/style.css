@@ -333,27 +333,24 @@ ul {
 .about-image {
     width: 100%;
     aspect-ratio: 4/5;
-    background-color: #0d1117;
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     z-index: 1;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-    font-size: 4rem;
-    color: #2a2a2a;
-    overflow: hidden;
+    overflow: visible;
 }
 
-/* Cinematic sheen inside about image placeholder */
+#about-photo-root {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .about-image::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg,
-            rgba(232, 160, 32, 0.04) 0%,
-            transparent 50%,
-            rgba(0, 0, 0, 0.2) 100%);
+    display: none;
 }
 
 .about-image-wrapper:hover::before {

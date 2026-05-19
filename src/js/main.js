@@ -1,4 +1,5 @@
 import '../react/hero-beams.tsx';
+import '../react/about-photo.tsx';
 
 document.addEventListener('DOMContentLoaded', () => {
     // Navbar Scroll Effect
