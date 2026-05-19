@@ -1,3 +1,5 @@
+import '../react/hero-beams.tsx';
+
 document.addEventListener('DOMContentLoaded', () => {
     // Navbar Scroll Effect
     const navbar = document.getElementById('navbar');
