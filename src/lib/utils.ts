@@ -1,0 +1,24 @@
+type ClassPrimitive = string | number | boolean | null | undefined
+type ClassDictionary = Record<string, boolean | null | undefined>
+type ClassValue = ClassPrimitive | ClassDictionary | ClassValue[]
+
+function toClassName(value: ClassValue): string {
+  if (!value) return ""
+
+  if (typeof value === "string" || typeof value === "number") {
+    return String(value)
+  }
+
+  if (Array.isArray(value)) {
+    return value.map(toClassName).filter(Boolean).join(" ")
+  }
+
+  return Object.entries(value)
+    .filter(([, enabled]) => Boolean(enabled))
+    .map(([className]) => className)
+    .join(" ")
+}
+
+export function cn(...inputs: ClassValue[]) {
+  return inputs.map(toClassName).filter(Boolean).join(" ")
+}

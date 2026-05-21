@@ -3,6 +3,7 @@ import '../react/hero-beams.tsx';
 import '../react/about-photo.tsx';
 import '../react/navbar.tsx';
 import '../react/hero-shuffle.tsx';
+import '../react/hero-button.tsx';
 
 document.addEventListener('DOMContentLoaded', () => {
 
