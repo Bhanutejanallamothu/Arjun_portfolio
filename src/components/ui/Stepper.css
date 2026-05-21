@@ -264,15 +264,23 @@
   max-width: 50rem;
 }
 
+.education-border-glow {
+  width: 100%;
+}
+
+.education-border-glow .border-glow-inner {
+  border-radius: inherit;
+  overflow: hidden;
+}
+
 .education-step-card {
   position: relative;
   overflow: hidden;
   padding: 2rem;
-  border-radius: 1.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: inherit;
   background:
-    linear-gradient(145deg, rgba(17, 22, 30, 0.95), rgba(8, 11, 16, 0.98)),
-    radial-gradient(circle at top right, rgba(232, 160, 32, 0.12), transparent 42%);
+    linear-gradient(145deg, rgba(17, 22, 30, 0.78), rgba(8, 11, 16, 0.86)),
+    radial-gradient(circle at top right, rgba(232, 160, 32, 0.08), transparent 42%);
 }
 
 .education-step-card::before {
