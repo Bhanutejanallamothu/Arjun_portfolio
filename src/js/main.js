@@ -4,8 +4,10 @@ import '../react/about-photo.tsx';
 import '../react/navbar.tsx';
 import '../react/hero-shuffle.tsx';
 import '../react/hero-button.tsx';
+import '../react/orbiting-skills.tsx';
 import '../react/education-stepper.tsx';
 import '../react/showreel-bounce.tsx';
+import '../react/footer-share.tsx';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -20,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Intersection Observer for Fade-in Animations
+    // Intersection Observer for section reveal animations
     const fadeElements = document.querySelectorAll('.fade-in');
     
     const fadeOptions = {
@@ -32,15 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                
-                // If it's a skills section, trigger progress bars
-                if (entry.target.classList.contains('skills-container')) {
-                    const progressBars = entry.target.querySelectorAll('.progress');
-                    progressBars.forEach(bar => {
-                        const width = bar.getAttribute('data-width');
-                        bar.style.width = width;
-                    });
-                }
                 
                 observer.unobserve(entry.target);
             }

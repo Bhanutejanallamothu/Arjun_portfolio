@@ -1,0 +1,226 @@
+.skills-orbit-shell {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+.skills-orbit-copy {
+  display: grid;
+  gap: 0.9rem;
+  max-width: 36rem;
+}
+
+.skills-orbit-kicker {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.skills-orbit-title {
+  color: var(--text-color);
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 0.95;
+}
+
+.skills-orbit-text {
+  color: #92a2b6;
+  font-size: 1rem;
+  max-width: 32rem;
+}
+
+.skills-orbit-stage {
+  display: flex;
+  justify-content: center;
+}
+
+.skills-orbit-viewport {
+  position: relative;
+  width: min(100%, 450px);
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.skills-orbit-backdrop {
+  position: absolute;
+  inset: 8%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(55, 65, 81, 0.18), transparent 44%),
+    radial-gradient(circle at 72% 72%, rgba(75, 85, 99, 0.18), transparent 42%);
+  filter: blur(10px);
+  opacity: 0.9;
+}
+
+.skills-orbit-core {
+  position: relative;
+  width: 5.4rem;
+  height: 5.4rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  background: linear-gradient(135deg, #374151, #111827);
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.skills-orbit-core-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  filter: blur(18px);
+  animation: orbit-core-pulse 3.8s ease-in-out infinite;
+}
+
+.skills-orbit-core-glow--cyan {
+  background: rgba(6, 182, 212, 0.3);
+}
+
+.skills-orbit-core-glow--purple {
+  background: rgba(147, 51, 234, 0.22);
+  animation-delay: 1s;
+}
+
+.skills-orbit-core-icon {
+  position: relative;
+  z-index: 2;
+}
+
+.orbit-path {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.orbit-path-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    transparent 30%,
+    var(--orbit-path-secondary) 70%,
+    var(--orbit-path-primary) 100%
+  );
+  box-shadow:
+    0 0 60px var(--orbit-path-primary),
+    inset 0 0 60px var(--orbit-path-secondary);
+  animation: orbit-core-pulse 4s ease-in-out infinite;
+}
+
+.orbit-path-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid var(--orbit-path-border);
+  box-shadow: inset 0 0 20px var(--orbit-path-secondary);
+}
+
+.orbit-skill-anchor {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  transition: z-index 0.2s ease;
+}
+
+.orbit-skill-button {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 0.55rem;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(31, 41, 55, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+  cursor: pointer;
+}
+
+.orbit-skill-button:hover,
+.orbit-skill-button.is-hovered {
+  transform: scale(1.18);
+  box-shadow:
+    0 0 30px var(--orbit-icon-glow),
+    0 0 60px var(--orbit-icon-glow-soft);
+}
+
+.orbit-skill-button--cyan:hover,
+.orbit-skill-button--cyan.is-hovered {
+  border-color: rgba(6, 182, 212, 0.35);
+}
+
+.orbit-skill-button--purple:hover,
+.orbit-skill-button--purple.is-hovered {
+  border-color: rgba(147, 51, 234, 0.35);
+}
+
+.orbit-skill-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.orbit-skill-tooltip {
+  position: absolute;
+  left: 50%;
+  bottom: -2.5rem;
+  transform: translateX(-50%) translateY(6px);
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.96);
+  color: #fff;
+  font-size: 0.72rem;
+  line-height: 1;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.orbit-skill-tooltip.is-visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@keyframes orbit-core-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 960px) {
+  .skills-orbit-shell {
+    grid-template-columns: minmax(0, 0.95fr) minmax(320px, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-orbit-viewport {
+    width: min(100%, 360px);
+  }
+}

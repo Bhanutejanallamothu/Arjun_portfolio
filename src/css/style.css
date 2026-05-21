@@ -1124,30 +1124,123 @@ ul {
 
 /* ─── Contact Section ────────────────────────────────────── */
 .contact-wrapper {
-    max-width: 600px;
+    max-width: 1100px;
     margin: 0 auto;
     text-align: center;
 }
 
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+.contact-lead {
+    max-width: 40rem;
+    margin: 0 auto 2.5rem;
+    color: var(--text-muted);
+    font-size: 1.02rem;
+}
+
+.contact-flip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
     margin-bottom: 40px;
 }
 
-.contact-item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-    font-size: 1.2rem;
+.contact-flip-container {
+    min-height: 294px;
+    perspective: 900px;
 }
 
-.contact-item i {
+.contact-flip-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 294px;
+    transform-style: preserve-3d;
+    transition: transform 1500ms;
+    border-radius: 2rem;
+}
+
+.contact-flip-container:hover>.contact-flip-card,
+.contact-flip-container:focus-within>.contact-flip-card {
+    transform: rotateY(180deg) rotateZ(180deg);
+}
+
+.contact-face {
+    position: absolute;
+    inset: 0;
+    border-radius: 2rem;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    padding: 2rem 1.6rem;
+    color: aliceblue;
+    background:
+        linear-gradient(-135deg, rgba(116, 116, 116, 0.82), rgba(0, 0, 0, 0.96)),
+        radial-gradient(circle at top, rgba(232, 160, 32, 0.16), transparent 50%);
+    box-shadow:
+        0 0 10px 2px rgba(50, 50, 50, 0.4),
+        0 24px 48px rgba(0, 0, 0, 0.42);
+    overflow: hidden;
+}
+
+.contact-face::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    pointer-events: none;
+}
+
+.contact-front i,
+.contact-back i {
+    font-size: 2rem;
     color: var(--accent-color);
-    font-size: 1.5rem;
-    filter: drop-shadow(0 0 6px var(--accent-glow));
+    filter: drop-shadow(0 0 8px var(--accent-glow));
+}
+
+.contact-back {
+    transform: rotateY(180deg) rotateZ(180deg);
+}
+
+.contact-card-kicker {
+    font-size: 0.82rem;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: #b9c6d8;
+}
+
+.contact-card-heading {
+    font-size: 2rem;
+    line-height: 0.92;
+    color: var(--text-color);
+}
+
+.contact-card-value {
+    max-width: 100%;
+    font-family: var(--font-heading);
+    font-size: 1.45rem;
+    line-height: 1.05;
+    letter-spacing: 1px;
+    color: var(--accent-color);
+    text-transform: uppercase;
+    overflow-wrap: anywhere;
+    transition: var(--transition);
+}
+
+.contact-card-value:hover {
+    color: #ffd184;
+    text-shadow: 0 0 18px rgba(232, 160, 32, 0.28);
+}
+
+.contact-card-hint {
+    font-size: 0.88rem;
+    color: #92a2b6;
+}
+
+.contact-wrapper .btn {
+    min-width: 210px;
 }
 
 /* ─── Footer ─────────────────────────────────────────────── */
@@ -1285,6 +1378,31 @@ footer p {
 
     .nav-links a {
         font-size: 1.2rem;
+    }
+
+    .contact-flip-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-flip-container {
+        perspective: none;
+        min-height: auto;
+    }
+
+    .contact-flip-card {
+        height: auto;
+        min-height: auto;
+        transform: none !important;
+    }
+
+    .contact-front {
+        display: none;
+    }
+
+    .contact-back {
+        position: relative;
+        transform: none;
+        min-height: 240px;
     }
 }
 

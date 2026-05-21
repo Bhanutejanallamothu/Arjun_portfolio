@@ -47,53 +47,7 @@
         <section id="skills" class="section bg-darker">
             <div class="container">
                 <h2 class="section-title text-center fade-in">My Expertise</h2>
-                <div class="skills-container fade-in">
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Cinematography</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress" data-width="90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Video Editing</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress" data-width="95%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Color Grading</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress" data-width="85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Graphic Design</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress" data-width="80%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span>Content Creation</span>
-                            <span>88%</span>
-                        </div>
-                        <div class="progress-bar">
-                            <div class="progress" data-width="88%"></div>
-                        </div>
-                    </div>
-                </div>
+                <div id="skills-orbit-root" class="fade-in"></div>
             </div>
         </section>
 
@@ -150,18 +104,66 @@
             <div class="container">
                 <h2 class="section-title text-center fade-in">Get In Touch</h2>
                 <div class="contact-wrapper fade-in">
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <span>+91 74167 39929</span>
+                    <p class="contact-lead">
+                        Let&apos;s talk about films, edits, branded content, or the next
+                        visual story you want to bring to life.
+                    </p>
+                    <div class="contact-flip-grid">
+                        <div class="contact-flip-container">
+                            <div class="contact-flip-card">
+                                <div class="contact-face contact-front">
+                                    <i class="fas fa-phone-alt"></i>
+                                    <p class="contact-card-kicker">Direct Line</p>
+                                    <p class="contact-card-heading">Call Me</p>
+                                    <span class="contact-card-hint">Hover to reveal</span>
+                                </div>
+                                <div class="contact-face contact-back">
+                                    <p class="contact-card-kicker">Phone</p>
+                                    <a href="tel:+917416739929" class="contact-card-value">
+                                        +91 74167 39929
+                                    </a>
+                                    <span class="contact-card-hint">Available for shoots and edits</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>Arjunvasudev.info@gmail.com</span>
+                        <div class="contact-flip-container">
+                            <div class="contact-flip-card">
+                                <div class="contact-face contact-front">
+                                    <i class="fas fa-envelope"></i>
+                                    <p class="contact-card-kicker">Project Desk</p>
+                                    <p class="contact-card-heading">Email Me</p>
+                                    <span class="contact-card-hint">Hover to reveal</span>
+                                </div>
+                                <div class="contact-face contact-back">
+                                    <p class="contact-card-kicker">Email</p>
+                                    <a href="mailto:Arjunvasudev.info@gmail.com" class="contact-card-value">
+                                        Arjunvasudev.info@gmail.com
+                                    </a>
+                                    <span class="contact-card-hint">Best for detailed briefs</span>
+                                </div>
+                            </div>
                         </div>
-                        <div class="contact-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>Vijayawada, India</span>
+                        <div class="contact-flip-container">
+                            <div class="contact-flip-card">
+                                <div class="contact-face contact-front">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <p class="contact-card-kicker">Base Camp</p>
+                                    <p class="contact-card-heading">Location</p>
+                                    <span class="contact-card-hint">Hover to reveal</span>
+                                </div>
+                                <div class="contact-face contact-back">
+                                    <p class="contact-card-kicker">Based In</p>
+                                    <a
+                                        href="https://maps.google.com/?q=Vijayawada,India"
+                                        target="_blank"
+                                        rel="noreferrer"
+                                        class="contact-card-value"
+                                    >
+                                        Vijayawada, India
+                                    </a>
+                                    <span class="contact-card-hint">Open to remote and on-site work</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <a href="mailto:Arjunvasudev.info@gmail.com" class="btn btn-primary mt-4">Hire Me</a>
@@ -171,18 +173,13 @@
     </main>
 
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="social-links">
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="#" aria-label="Vimeo"><i class="fab fa-vimeo-v"></i></a>
+            <div class="container">
+                <div class="footer-content">
+                    <div id="footer-share-root"></div>
+                    <p>&copy; 2025 Arjun Vasudev. All rights reserved.</p>
                 </div>
-                <p>&copy; 2025 Arjun Vasudev. All rights reserved.</p>
             </div>
-        </div>
-    </footer>
+        </footer>
 
     <script type="module" src="/src/js/main.js"></script>
 </body>

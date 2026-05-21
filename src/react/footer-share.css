@@ -1,0 +1,19 @@
+.footer-share-panel {
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
+}
+
+.footer-share-kicker {
+  color: #708197;
+  font-size: 0.72rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.footer-share-copy {
+  max-width: 24rem;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
