@@ -272,6 +272,17 @@ ul {
         0 12px 40px rgba(0, 0, 0, 0.7);
 }
 
+#hero-title-root {
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.hero-glitch-title {
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.9),
+        0 12px 40px rgba(0, 0, 0, 0.7) !important;
+}
+
 .subtitle-wrapper {
     display: flex;
     flex-direction: column;

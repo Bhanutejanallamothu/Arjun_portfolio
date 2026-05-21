@@ -1,0 +1,32 @@
+.shuffle-parent {
+  display: inline-block;
+  white-space: normal;
+  word-wrap: break-word;
+  will-change: transform;
+  line-height: 1;
+  font-size: 6rem;
+  font-family: 'Bebas Neue', sans-serif;
+  text-transform: uppercase;
+  visibility: hidden;
+  letter-spacing: 0.15em;
+  text-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.9),
+    0 12px 40px rgba(0, 0, 0, 0.7);
+}
+
+.shuffle-parent.is-ready {
+  visibility: visible;
+}
+
+.shuffle-char {
+  display: inline-block;
+}
+
+.shuffle-word {
+  display: inline;
+  margin-right: 0;
+}
+
+.shuffle-line {
+  display: block;
+}
