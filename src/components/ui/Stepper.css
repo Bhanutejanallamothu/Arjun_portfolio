@@ -262,6 +262,10 @@
 
 .education-stepper .step-circle-container {
   max-width: 50rem;
+  background: transparent;
+  box-shadow:
+    0 24px 60px rgba(0, 0, 0, 0.18),
+    inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
 .education-border-glow {
@@ -278,22 +282,15 @@
   overflow: hidden;
   padding: 2rem;
   border-radius: inherit;
-  background:
-    linear-gradient(145deg, rgba(17, 22, 30, 0.78), rgba(8, 11, 16, 0.86)),
-    radial-gradient(circle at top right, rgba(232, 160, 32, 0.08), transparent 42%);
+  background: transparent;
 }
 
 .education-step-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.04),
-    transparent 28%,
-    transparent 72%,
-    rgba(232, 160, 32, 0.05)
-  );
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: inherit;
   pointer-events: none;
 }
 

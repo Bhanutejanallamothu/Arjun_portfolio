@@ -19,7 +19,7 @@ function EducationStepper() {
           className="education-border-glow"
           edgeSensitivity={26}
           glowColor="40 80 80"
-          backgroundColor="#0d1117"
+          backgroundColor="transparent"
           borderRadius={24}
           glowRadius={34}
           glowIntensity={1}
@@ -65,7 +65,7 @@ function EducationStepper() {
           className="education-border-glow"
           edgeSensitivity={26}
           glowColor="40 80 80"
-          backgroundColor="#0d1117"
+          backgroundColor="transparent"
           borderRadius={24}
           glowRadius={34}
           glowIntensity={1}
@@ -111,7 +111,7 @@ function EducationStepper() {
           className="education-border-glow"
           edgeSensitivity={26}
           glowColor="40 80 80"
-          backgroundColor="#0d1117"
+          backgroundColor="transparent"
           borderRadius={24}
           glowRadius={34}
           glowIntensity={1}
