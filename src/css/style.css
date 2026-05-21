@@ -942,78 +942,170 @@ ul {
 /* ─── Work Experience ────────────────────────────────────── */
 .work-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 28px;
 }
 
 .work-card {
-    background: linear-gradient(145deg, #0d1117 0%, #080b10 100%);
-    padding: 40px 30px;
-    border-radius: 4px;
-    transition: var(--transition);
-    border: 1px solid rgba(255, 255, 255, 0.055);
     position: relative;
-    overflow: hidden;
-}
-
-/* Corner bracket decorations */
-.work-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 40px;
-    height: 40px;
-    border-bottom: 2px solid rgba(232, 160, 32, 0.15);
-    border-right: 2px solid rgba(232, 160, 32, 0.15);
-    transition: var(--transition);
-}
-
-.work-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 2px;
-    background: linear-gradient(to right,
-            var(--accent-color),
-            transparent);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s ease;
+    height: 100%;
+    min-height: 370px;
+    padding: 20px;
+    perspective: 1000px;
 }
 
-.work-card:hover {
-    transform: translateY(-8px);
+.work-card:focus-visible {
+    outline: 2px solid rgba(232, 160, 32, 0.45);
+    outline-offset: 4px;
+    border-radius: 1.25rem;
+}
+
+.work-card:focus-visible .work-tilt-card,
+.work-card:hover .work-tilt-card {
+    background-position:
+        -100px 100px,
+        -100px 100px;
+    transform: rotate3d(0.5, 1, 0, 30deg);
+}
+
+.work-card:focus-visible .work-content-box,
+.work-card:hover .work-content-box {
+    background: #373737;
+}
+
+.work-card:focus-visible .work-icon,
+.work-card:hover .work-icon {
+    transform: translate3d(0px, 0px, 72px);
+}
+
+.work-card:focus-visible .work-card-title,
+.work-card:hover .work-card-title,
+.work-card:focus-visible .work-card-content,
+.work-card:hover .work-card-content,
+.work-card:focus-visible .work-see-more,
+.work-card:hover .work-see-more {
+    transform: translate3d(0px, 0px, 60px);
+}
+
+.work-card:focus-visible .work-date-box,
+.work-card:hover .work-date-box {
+    border-color: rgba(232, 160, 32, 0.5);
     box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.65),
-        0 0 0 1px rgba(232, 160, 32, 0.12);
-    border-color: rgba(232, 160, 32, 0.15);
+        rgba(120, 120, 120, 0.22) 0px 17px 10px -10px,
+        0 0 20px rgba(232, 160, 32, 0.18);
 }
 
-.work-card:hover::before {
-    transform: scaleX(1);
+.work-tilt-card {
+    position: absolute;
+    inset: 20px;
+    min-height: 330px;
+    padding-top: 50px;
+    border: 3px solid #1f1f1f;
+    transform-style: preserve-3d;
+    background:
+        linear-gradient(135deg, transparent 18.75%, #7a7a7a 0 31.25%, transparent 0),
+        repeating-linear-gradient(45deg, #7a7a7a -6.25% 6.25%, #1f1f1f 0 18.75%);
+    background-size: 60px 60px;
+    background-position:
+        0 0,
+        0 0;
+    background-color: #000000;
+    box-shadow: rgba(120, 120, 120, 0.3) 0px 30px 30px -10px;
+    transition: all 0.5s ease-in-out;
 }
 
-.work-card:hover::after {
-    border-color: rgba(232, 160, 32, 0.4);
+.work-content-box {
+    min-height: 100%;
+    background: #2f2f2f;
+    transition: all 0.5s ease-in-out;
+    padding: 60px 25px 25px 25px;
+    transform-style: preserve-3d;
 }
 
 .work-icon {
-    font-size: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    margin-bottom: 1.4rem;
+    border-radius: 999px;
+    background: rgba(17, 17, 17, 0.9);
+    border: 1px solid rgba(232, 160, 32, 0.2);
     color: var(--accent-color);
-    margin-bottom: 20px;
+    font-size: 1.5rem;
     filter: drop-shadow(0 0 8px var(--accent-glow));
+    transform: translate3d(0px, 0px, 50px);
+    transition: all 0.5s ease-in-out;
 }
 
-.work-card h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
+.work-card-title {
+    display: inline-block;
+    color: #f5f5f5;
+    font-size: 1.9rem;
+    font-weight: 900;
+    line-height: 0.95;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 50px);
 }
 
-.work-card p {
-    color: var(--text-muted);
+.work-card-content {
+    margin-top: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.7;
+    color: #d1d1d1;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 30px);
+}
+
+.work-see-more {
+    cursor: default;
+    margin-top: 1.35rem;
+    display: inline-block;
+    font-weight: 900;
+    font-size: 0.66rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #f5f5f5;
+    background: #111111;
+    border: 1px solid rgba(232, 160, 32, 0.18);
+    padding: 0.6rem 0.8rem;
+    transition: all 0.5s ease-in-out;
+    transform: translate3d(0px, 0px, 20px);
+}
+
+.work-date-box {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 60px;
+    width: 60px;
+    background: #111111;
+    border: 1px solid #7a7a7a;
+    padding: 10px;
+    transform: translate3d(0px, 0px, 80px);
+    box-shadow: rgba(120, 120, 120, 0.2) 0px 17px 10px -10px;
+    transition: all 0.5s ease-in-out;
+}
+
+.work-date-box span {
+    display: block;
+    text-align: center;
+}
+
+.work-badge-label {
+    color: #bdbdbd;
+    font-size: 0.5rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+}
+
+.work-badge-value {
+    font-size: 1.25rem;
+    font-weight: 900;
+    color: #f5f5f5;
 }
 
 /* ─── Education Timeline ─────────────────────────────────── */
@@ -1380,6 +1472,16 @@ footer p {
         font-size: 1.2rem;
     }
 
+    .work-card {
+        min-height: 350px;
+        padding: 14px;
+    }
+
+    .work-tilt-card {
+        inset: 14px;
+        min-height: 322px;
+    }
+
     .contact-flip-grid {
         grid-template-columns: 1fr;
     }
@@ -1403,6 +1505,31 @@ footer p {
         position: relative;
         transform: none;
         min-height: 240px;
+    }
+}
+
+@media (hover: none) {
+    .work-card:hover .work-tilt-card,
+    .work-card:hover .work-content-box,
+    .work-card:hover .work-icon,
+    .work-card:hover .work-card-title,
+    .work-card:hover .work-card-content,
+    .work-card:hover .work-see-more,
+    .work-card:hover .work-date-box {
+        transform: none;
+        background-position:
+            0 0,
+            0 0;
+        box-shadow: none;
+    }
+
+    .work-card:hover .work-content-box {
+        background: #2f2f2f;
+    }
+
+    .work-card:hover .work-date-box {
+        box-shadow: rgba(120, 120, 120, 0.2) 0px 17px 10px -10px;
+        border-color: #7a7a7a;
     }
 }
 
