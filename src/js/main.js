@@ -5,6 +5,7 @@ import '../react/navbar.tsx';
 import '../react/hero-shuffle.tsx';
 import '../react/hero-button.tsx';
 import '../react/education-stepper.tsx';
+import '../react/showreel-bounce.tsx';
 
 document.addEventListener('DOMContentLoaded', () => {
 
