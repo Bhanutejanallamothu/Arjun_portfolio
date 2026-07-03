@@ -1,0 +1,565 @@
+/* intro.css */
+body.intro-active {
+    overflow: hidden !important;
+}
+
+#intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #080b10;
+    z-index: 9999;
+    overflow: hidden;
+    transition: opacity 1s ease;
+}
+
+#intro-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Base styles scoped to #intro-screen */
+#intro-screen .controls {
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#intro-screen .controls__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0.5rem;
+    padding: 1.4rem;
+    border: none;
+    border-radius: 4rem;
+    background: #4e5a5f;
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: transform;
+    color: white;
+    overflow: hidden;
+    cursor: pointer;
+    outline: none;
+}
+
+#intro-screen .controls__btn svg {
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 1rem;
+    width: 1rem;
+    position: absolute;
+}
+
+#intro-screen .controls__btn svg:nth-child(2) {
+    transform: translateY(2rem);
+}
+
+#intro-screen .controls__btn svg path {
+    fill: white;
+}
+
+#intro-screen .controls__btn--toggled svg:nth-child(1) {
+    transform: translateY(-2rem);
+}
+
+#intro-screen .controls__btn--toggled svg:nth-child(2) {
+    transform: translateY(0rem);
+}
+
+#intro-screen .controls__btn:hover {
+    transform: scale(1.1);
+}
+
+@keyframes introScaleIn {
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUpText {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#intro-screen .card {
+    width: 9rem;
+    height: 9rem;
+    background: #fff;
+    border-radius: 3px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 9;
+    display: flex;
+}
+
+#intro-screen .card h1 {
+    font-family: system-ui, 'Helvetica Neue', Roboto, 'Open Sans', sans-serif;
+    font-size: 1.5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    letter-spacing: 0.07em;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    color: #fff;
+    font-weight: 200;
+    text-align: center;
+    margin: 1rem 0;
+    width: 100%;
+    overflow: hidden;
+}
+
+#intro-screen .card h1 span {
+    opacity: 0;
+    transform: translateY(100%);
+    animation: slideUpText 1s 4.2s forwards cubic-bezier(1, 0, 0, 1);
+    display: inline-block;
+}
+
+#intro-screen .card h1 span:nth-of-type(2) {
+    animation-delay: 4.225s;
+}
+
+#intro-screen .card h1 span:nth-of-type(3) {
+    animation-delay: 4.25s;
+}
+
+#intro-screen .card h1 span:nth-of-type(4) {
+    animation-delay: 4.275s;
+}
+
+#intro-screen .card h1 span:nth-of-type(5) {
+    animation-delay: 4.3s;
+}
+
+#intro-screen .card, #intro-screen .card img {
+    transform: scale(0);
+    animation: introScaleIn 0.8s forwards cubic-bezier(1, 0, 0, 1);
+    animation-delay: 3.7s;
+}
+
+#intro-screen .card img {
+    animation-delay: 3.8s;
+    margin: auto;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+#intro-screen .bg-line, #intro-screen .dot, #intro-screen .wrapper, #intro-screen .logo-mkbhd, #intro-screen .skewed-box .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#intro-screen .stripe {
+    width: 1px;
+    background: #fff;
+    opacity: 0.55;
+    position: absolute;
+}
+
+#intro-screen .skewed-box .stripe {
+    height: 170%;
+    bottom: -40%;
+    animation: scaleTop 0.6s both linear;
+}
+
+#intro-screen .skewed-box .stripe.top {
+    transform-origin: 50% 100%;
+}
+
+#intro-screen .skewed-box .stripe.bottom {
+    transform-origin: 50% 0;
+}
+
+#intro-screen .skewed-box.white .stripe.top {
+    right: 0;
+    animation-delay: 0.2s;
+}
+
+#intro-screen .skewed-box.white .stripe.topBottom {
+    animation-name: scaleBottom;
+    transform-origin: 50% 0;
+    right: 6px;
+    animation-delay: 0.3s;
+}
+
+#intro-screen .skewed-box.white .stripe.bottomTop {
+    transform-origin: 50% 100%;
+    left: 6px;
+    animation-delay: 0.4s;
+}
+
+#intro-screen .skewed-box.white .stripe.bottom {
+    animation-name: scaleBottom;
+    animation-delay: 0;
+}
+
+#intro-screen .skewed-box.pink .stripe.top {
+    animation-delay: 0.5s;
+}
+
+#intro-screen .skewed-box.pink .stripe.bottom {
+    animation-name: scaleBottom;
+    animation-delay: 0.4s;
+    left: 100%;
+}
+
+#intro-screen .final-stripe {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 30%;
+    width: 1px;
+}
+
+#intro-screen .final-stripe.right {
+    transform: rotateZ(60deg) translateY(-7rem);
+    animation: finalStripeScaleRight 0.4s 3s both ease;
+}
+
+#intro-screen .final-stripe.left {
+    animation: finalStripeScaleLeft 0.4s 3s both ease;
+}
+
+@keyframes finalStripeScaleLeft {
+    0% {
+        transform: rotateZ(60deg) scaleY(0) translateY(7rem);
+    }
+    50% {
+        transform: rotateZ(60deg) scaleY(1) translateY(7rem);
+    }
+    100% {
+        transform: rotateZ(60deg) scaleY(1) translateY(14rem);
+        opacity: 0;
+    }
+}
+
+@keyframes finalStripeScaleRight {
+    0% {
+        transform: rotateZ(60deg) scaleY(0) translateY(-7rem);
+    }
+    50% {
+        transform: rotateZ(60deg) scaleY(1) translateY(-7rem);
+    }
+    100% {
+        transform: rotateZ(60deg) scaleY(1) translateY(-14rem);
+        opacity: 0;
+    }
+}
+
+@keyframes scaleBottom {
+    0% {
+        transform: translateY(0) scaleY(0);
+    }
+    50% {
+        transform: translateY(0) scaleY(1);
+    }
+    100% {
+        transform: translateY(100%) scaleY(0);
+    }
+}
+
+@keyframes scaleTop {
+    0% {
+        transform: translateY(0) scaleY(0);
+    }
+    50% {
+        transform: translateY(0) scaleY(1);
+    }
+    100% {
+        transform: translateY(-100%) scaleY(0);
+    }
+}
+
+#intro-screen .bg-line, #intro-screen .dot {
+    height: 1px;
+    will-change: transform;
+}
+
+#intro-screen .bg-line {
+    width: 30px;
+    background: #7a7e7f;
+    animation: introBgLine 2.8s infinite ease-in-out;
+}
+
+#intro-screen .dot {
+    width: 1px;
+    background: #b6b9ba;
+    border-radius: 50%;
+    animation: introDot 2.8s infinite ease-in-out;
+}
+
+@keyframes introBgLine {
+    0%, 100% {
+        opacity: 1;
+        transform: translateX(0.5rem) scaleX(0.1);
+    }
+    20% {
+        opacity: 0.5;
+        transform: translateX(0.1rem) scaleX(0.4);
+    }
+    40% {
+        opacity: 0;
+        transform: translateX(1rem) scaleX(1.2);
+    }
+    60% {
+        opacity: 0.4;
+        transform: translateX(-0.5rem) scaleX(0.5);
+    }
+    80% {
+        opacity: 0.1;
+        transform: translateX(0) scaleX(0.8);
+    }
+}
+
+@keyframes introDot {
+    0%, 100% {
+        transform: translateX(0.5rem);
+    }
+    20% {
+        transform: translateX(0.1rem);
+    }
+    40% {
+        transform: translateX(1rem);
+    }
+    60% {
+        transform: translateX(-0.5rem);
+    }
+    80% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes bgOpacity {
+    to {
+        opacity: 0.4;
+    }
+}
+
+#intro-screen #intro-animation-root {
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transform: scale(1.2) translateZ(0px);
+}
+
+#intro-screen .wrapper {
+    width: 100%;
+    height: 100%;
+    transform-origin: 50% 50%;
+    will-change: opacity;
+    animation: introRotate 3.16s forwards linear, bgOpacity 1s 3.4s forwards ease;
+}
+
+#intro-screen .logo-mkbhd {
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    height: 100px;
+    width: 100px;
+    transform: translateZ(0) scale(0.85);
+    z-index: 9;
+}
+
+#intro-screen .skewed-box {
+    width: 57px;
+    height: 100%;
+    position: absolute;
+    left: 21px;
+}
+
+#intro-screen .skewed-box.over {
+    z-index: 4;
+}
+
+#intro-screen .skewed-box .bg {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+#intro-screen .skewed-box.white {
+    transform: rotateZ(-90deg) skewX(-30deg);
+}
+
+#intro-screen .skewed-box.white .mask {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+
+#intro-screen .skewed-box.white.bottom .mask {
+    clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+}
+
+#intro-screen .skewed-box.pink {
+    transform: rotateZ(90deg) skewX(30deg);
+    z-index: 3;
+}
+
+#intro-screen .skewed-box.pink .bg {
+    animation: slideUp 1s 0.6s both cubic-bezier(0.165, 0.84, 0.44, 1), blink 0.2s 2.9s forwards steps(1, end);
+    transform-origin: 50% 130%;
+    background: linear-gradient(to left, #e8a020, #ffb32f); /* Changed to fit portfolio */
+}
+
+#intro-screen .skewed-box.bottom .line.top {
+    animation-name: slideLinesLeft, shrinkLineX;
+}
+
+#intro-screen .skewed-box.bottom .line.right {
+    animation-name: slideLinesLeft, shrinkLineY;
+}
+
+#intro-screen .skewed-box.bottom .line.bottom {
+    animation-name: slideLinesLeft, shrinkLineX;
+}
+
+#intro-screen .skewed-box.bottom .line.left {
+    animation-name: slideLinesLeft, shrinkLineY;
+}
+
+#intro-screen .skewed-box.top .line.top {
+    animation-name: slideLinesRight, shrinkLineX;
+}
+
+#intro-screen .skewed-box.top .line.right {
+    animation-name: slideLinesRight, shrinkLineY;
+}
+
+#intro-screen .skewed-box.top .line.bottom {
+    animation-name: slideLinesRight, shrinkLineX;
+}
+
+#intro-screen .skewed-box.top .line.left {
+    animation-name: slideLinesRight, shrinkLineY;
+}
+
+#intro-screen .skewed-box .line {
+    animation-duration: 0.7s, 0.07s;
+    animation-delay: 0.3s, 2.9s;
+    animation-fill-mode: both, forwards;
+    animation-timing-function: ease, linear;
+    background: #fff;
+    position: absolute;
+    will-change: transform;
+}
+
+#intro-screen .skewed-box .line.top, #intro-screen .skewed-box .line.bottom {
+    width: 100%;
+    height: 6px;
+    top: 0;
+}
+
+#intro-screen .skewed-box .line.right, #intro-screen .skewed-box .line.left {
+    width: 6px;
+    height: 100%;
+    right: 0;
+}
+
+#intro-screen .skewed-box .line.top {
+    animation-delay: 0.3s, 3.11s;
+    transform-origin: 100% 0;
+}
+
+#intro-screen .skewed-box .line.right {
+    animation-delay: 0.3s, 3.18s;
+    transform-origin: 0 100%;
+}
+
+#intro-screen .skewed-box .line.bottom {
+    top: auto;
+    bottom: 0;
+    animation-delay: 0.3s, 2.9s;
+    transform-origin: 0 100%;
+}
+
+#intro-screen .skewed-box .line.left {
+    right: auto;
+    transform-origin: 0 0;
+    animation-delay: 0.3s, 3.04s;
+}
+
+@keyframes shrinkLineY {
+    to {
+        transform: scaleY(0);
+    }
+}
+
+@keyframes shrinkLineX {
+    to {
+        transform: scaleX(0);
+    }
+}
+
+@keyframes slideLinesLeft {
+    from {
+        transform: translateY(-3.2rem);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideLinesRight {
+    from {
+        transform: translateY(3.2rem);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    0% {
+        transform: scaleY(0) translateY(2rem);
+    }
+    100% {
+        transform: scaleY(1) translateY(0);
+    }
+}
+
+@keyframes introRotate {
+    0% {
+        transform: rotateZ(-3deg) scale(1);
+    }
+    100% {
+        transform: rotateZ(0) scale(1.2);
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 0;
+    }
+    25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    75% {
+        opacity: 1;
+    }
+}
+
+/* Hardcoded children from SCSS compiled output */

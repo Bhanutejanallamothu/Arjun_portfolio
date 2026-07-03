@@ -22,11 +22,11 @@ function EducationStepper() {
           backgroundColor="transparent"
           borderRadius={24}
           glowRadius={34}
-          glowIntensity={1}
+          glowIntensity={0}
           coneSpread={24}
-          animated={true}
+          animated={false}
           colors={["#ffffff", "#cccccc", "#56d5ff"]}
-          fillOpacity={0.38}
+          fillOpacity={0}
         >
           <article className="education-step-card">
             <div className="education-step-grid">
@@ -68,11 +68,11 @@ function EducationStepper() {
           backgroundColor="transparent"
           borderRadius={24}
           glowRadius={34}
-          glowIntensity={1}
+          glowIntensity={0}
           coneSpread={24}
-          animated={true}
+          animated={false}
           colors={["#ffffff", "#cccccc", "#56d5ff"]}
-          fillOpacity={0.38}
+          fillOpacity={0}
         >
           <article className="education-step-card">
             <div className="education-step-grid">
@@ -114,11 +114,11 @@ function EducationStepper() {
           backgroundColor="transparent"
           borderRadius={24}
           glowRadius={34}
-          glowIntensity={1}
+          glowIntensity={0}
           coneSpread={24}
-          animated={true}
+          animated={false}
           colors={["#ffffff", "#cccccc", "#56d5ff"]}
-          fillOpacity={0.38}
+          fillOpacity={0}
         >
           <article className="education-step-card">
             <div className="education-step-grid">
