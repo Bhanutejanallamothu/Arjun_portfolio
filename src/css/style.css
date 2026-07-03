@@ -6,9 +6,9 @@
     --bg-mid: #0d1117;
     --text-color: #f0f0f0;
     --text-muted: #8a9ab0;
-    --accent-color: #e8a020;
-    --accent-dim: rgba(232, 160, 32, 0.08);
-    --accent-glow: rgba(232, 160, 32, 0.15);
+    --accent-color: #ffffff;
+    --accent-dim: rgba(255, 255, 255, 0.08);
+    --accent-glow: rgba(255, 255, 255, 0.15);
     --font-heading: 'Bebas Neue', sans-serif;
     --font-body: 'Inter', sans-serif;
     --transition: all 0.3s ease;
@@ -1457,7 +1457,7 @@ footer p {
         align-items: center;
         transition: right 0.4s ease;
         z-index: 999;
-        border-left: 1px solid rgba(232, 160, 32, 0.1);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .nav-links.active {

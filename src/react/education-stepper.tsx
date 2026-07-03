@@ -25,7 +25,7 @@ function EducationStepper() {
           glowIntensity={1}
           coneSpread={24}
           animated={true}
-          colors={["#e8a020", "#f7c15c", "#56d5ff"]}
+          colors={["#ffffff", "#cccccc", "#56d5ff"]}
           fillOpacity={0.38}
         >
           <article className="education-step-card">
@@ -71,7 +71,7 @@ function EducationStepper() {
           glowIntensity={1}
           coneSpread={24}
           animated={true}
-          colors={["#e8a020", "#f7c15c", "#56d5ff"]}
+          colors={["#ffffff", "#cccccc", "#56d5ff"]}
           fillOpacity={0.38}
         >
           <article className="education-step-card">
@@ -82,7 +82,7 @@ function EducationStepper() {
                 <h3 className="education-step-heading">BSc Animation &amp; Gaming</h3>
                 <h4 className="education-step-subheading">KL University</h4>
                 <p className="education-step-copy">
-                  Current academic track centered on advanced VFX, 3D animation, and
+                  Current academic track centered on 3D animation and
                   interactive media design, connecting technical execution with cinematic
                   storytelling.
                 </p>
@@ -91,7 +91,7 @@ function EducationStepper() {
                 <div className="education-step-meta-item">
                   <span className="education-step-meta-label">Specialization</span>
                   <span className="education-step-meta-value">
-                    VFX pipelines, animation, and interactive media
+                    Animation, 3D pipelines, and interactive media
                   </span>
                 </div>
                 <div className="education-step-meta-item">
@@ -117,18 +117,18 @@ function EducationStepper() {
           glowIntensity={1}
           coneSpread={24}
           animated={true}
-          colors={["#e8a020", "#f7c15c", "#56d5ff"]}
+          colors={["#ffffff", "#cccccc", "#56d5ff"]}
           fillOpacity={0.38}
         >
           <article className="education-step-card">
             <div className="education-step-grid">
               <div>
                 <div className="education-step-tag">Current Direction</div>
-                <h3 className="education-step-heading">Blending Film With VFX</h3>
+                <h3 className="education-step-heading">Blending Film With Motion</h3>
                 <h4 className="education-step-subheading">Where the journey is heading</h4>
                 <p className="education-step-copy">
                   The current focus is on combining cinematography instincts with post
-                  production craft, especially visual effects, color, motion design, and
+                  production craft, especially color grading, motion design, and
                   immersive media workflows.
                 </p>
               </div>
@@ -142,7 +142,7 @@ function EducationStepper() {
                 <div className="education-step-meta-item">
                   <span className="education-step-meta-label">Next Evolution</span>
                   <span className="education-step-meta-value">
-                    More advanced VFX work, 3D pipelines, and interactive storytelling
+                    More advanced motion design, 3D pipelines, and interactive storytelling
                   </span>
                 </div>
               </div>
