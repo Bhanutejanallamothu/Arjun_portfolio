@@ -1,4 +1,3 @@
-import '../react/intro.tsx';
 import '../react/hero-beams.tsx';
 import '../react/about-photo.tsx';
 import '../react/navbar.tsx';
