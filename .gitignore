@@ -1,3 +1,8 @@
 /node_modules
 /.claude
 log.txt
+
+
+# Security & Build Hygeine additions
+.env
+*.env
